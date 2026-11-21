@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#541827"><title>دار الكرم | مطعمك المفضل</title>
+<style>
+ :root{--wine:#541827;--wine2:#70243a;--wine3:#35101c;--gold:#c6a15b;--gold-light:#e4cc91;--cream:#fbf7f0;--paper:#fffdf9;--ink:#2c2020;--muted:#887b75;--line:rgba(198,161,91,.42);--shadow:0 16px 45px rgba(53,16,28,.12)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Tahoma,Arial,sans-serif}button,input,textarea{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}
+.topbar{background:var(--wine3);color:#f8eddd;text-align:center;padding:9px 15px;font-size:12px}
+header{position:sticky;top:0;z-index:20;background:rgba(251,247,240,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1180px;margin:auto;padding:15px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px}.logo{width:43px;height:43px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:23px;background:var(--wine)}
+.brand strong{display:block;color:var(--wine);font-size:19px}.brand small{display:block;color:var(--muted);font-size:10px;margin-top:3px}.links{display:flex;gap:25px;color:#59494a;font-size:13px}.links a:hover{color:var(--gold)}
+.btn{display:inline-block;border:1px solid var(--gold);background:var(--wine);color:#fff8ed;padding:11px 17px;border-radius:7px;font-size:12px;transition:.2s}.btn:hover{background:var(--wine2);transform:translateY(-1px)}.btn-outline{background:transparent;color:var(--wine)}.hero .btn-outline{color:white;border-color:var(--gold)}
+.hero{max-width:1180px;margin:30px auto 65px;padding:0 22px}.hero-card{min-height:450px;border:1px solid var(--gold);border-radius:18px;overflow:hidden;display:flex;align-items:center;background:linear-gradient(90deg,rgba(35,9,17,.91),rgba(65,17,32,.76) 48%,rgba(65,17,32,.15)),url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85') center/cover}
+.hero-content{padding:55px;max-width:600px;color:#fff8ee}.eyebrow{color:var(--gold-light);font-size:12px;letter-spacing:2px}.hero h1{font-size:clamp(34px,5vw,57px);line-height:1.35;margin:16px 0}.hero p{color:#f0e1d7;line-height:2;font-size:14px;max-width:470px}.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.section{max-width:1180px;margin:0 auto 75px;padding:0 22px}.section-head{text-align:center;margin-bottom:30px}.section-head span{color:var(--gold);font-size:11px;letter-spacing:2px}.section-head h2{color:var(--wine);font-size:29px;margin:9px 0}.section-head p{color:var(--muted);font-size:13px}
+.categories{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-bottom:27px}.category{border:1px solid var(--line);background:var(--paper);padding:9px 18px;border-radius:30px;color:var(--wine);font-size:12px}.category.active,.category:hover{background:var(--wine);color:white;border-color:var(--gold)}
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.food-card{background:var(--paper);border:1px solid var(--line);border-radius:13px;overflow:hidden;box-shadow:0 8px 25px rgba(53,16,28,.05);transition:.2s}.food-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.food-image{height:190px;background:#eadfd1;position:relative;overflow:hidden}.food-image img{width:100%;height:100%;object-fit:cover;display:block}.food-tag{position:absolute;top:12px;right:12px;background:var(--wine);color:#fff;padding:6px 10px;border-radius:20px;font-size:10px}
+.food-info{padding:17px}.food-info h3{margin:0 0 8px;color:var(--wine);font-size:17px}.food-info p{margin:0;color:var(--muted);font-size:12px;line-height:1.8;min-height:43px}.food-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:15px}.price{font-weight:bold;color:var(--wine);font-size:15px}.add{border:1px solid var(--gold);background:#fffaf1;color:var(--wine);border-radius:6px;padding:8px 12px;font-size:11px}.add:hover{background:var(--wine);color:white}
+.about{background:var(--wine3);color:#fff5e9;padding:55px 22px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold)}.about-inner{max-width:1050px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}.about h2{font-size:30px;color:var(--gold-light);margin:0 0 15px}.about p{font-size:13px;line-height:2.2;color:#e8d8d1}.about-box{border:1px solid var(--gold);border-radius:12px;padding:28px;text-align:center}.about-box strong{font-size:38px;color:var(--gold-light);display:block}.about-box span{font-size:12px;color:#e8d8d1}
+.contact{text-align:center;padding-top:55px}footer{background:#240b13;color:#d8c7bf;padding:30px 22px;text-align:center;font-size:11px}footer b{color:var(--gold-light)}
+.cart-panel{position:fixed;left:18px;bottom:18px;z-index:30}.cart-fab{border:1px solid var(--gold);background:var(--wine);color:white;border-radius:50px;padding:14px 20px;box-shadow:var(--shadow)}.cart-count{background:var(--gold);color:#2d1520;border-radius:50%;padding:2px 7px;margin-right:5px}
+.modal-backdrop{position:fixed;inset:0;background:rgba(20,8,12,.65);z-index:50;display:none;align-items:center;justify-content:center;padding:16px}.modal-backdrop.show{display:flex}.modal{width:min(520px,100%);max-height:90vh;overflow:auto;background:var(--paper);border:1px solid var(--gold);border-radius:13px;padding:23px}.modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:15px}.modal h3{margin:0;color:var(--wine)}.close{border:0;background:none;color:var(--wine);font-size:22px}
+.cart-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid #eee2d7;font-size:13px}.cart-row button{border:0;background:none;color:#a33;font-size:17px}.total{display:flex;justify-content:space-between;font-weight:bold;color:var(--wine);padding:18px 0}.field{display:grid;gap:6px;margin:12px 0}.field label{font-size:12px;color:var(--wine)}.field input,.field textarea{width:100%;border:1px solid var(--line);background:white;border-radius:7px;padding:11px;outline:none}.field input:focus,.field textarea:focus{border-color:var(--gold)}.full{width:100%}
+@media(max-width:800px){.links{display:none}.hero-card{min-height:410px}.hero-content{padding:30px}.menu-grid{grid-template-columns:repeat(2,1fr)}.about-inner{grid-template-columns:1fr}}
+@media(max-width:520px){.nav{padding:12px 14px}.brand strong{font-size:16px}.hero{padding:0 13px;margin-top:15px}.hero-content{padding:25px}.hero-card{min-height:430px}.menu-grid{grid-template-columns:1fr}.food-image{height:210px}.section{padding:0 14px}}
+
+</style>
+</head>
+<body>
+<div class="topbar">أهلاً بك في دار الكرم — مذاق يجمعنا ولمسة من الأصالة</div>
+<header><nav class="nav">
+<a class="brand" href="#"><span class="logo">✦</span><span><strong id="restaurantName">دار الكرم</strong><small>للطعم حكاية...</small></span></a>
+<div class="links"><a href="#home">الرئيسية</a><a href="#menu">قائمة الطعام</a><a href="#about">حكايتنا</a><a href="#contact">تواصل معنا</a></div>
+<button class="btn" onclick="openCart()">اطلب الآن</button>
+</nav></header>
+<main>
+<section class="hero" id="home"><div class="hero-card"><div class="hero-content">
+<div class="eyebrow">✦ نكهة أصيلة • ضيافة تليق بك ✦</div><h1>كل وجبة...<br>لها حكاية جميلة</h1>
+<p>اكتشف مذاقاً استثنائياً يجمع بين أجود المكونات والوصفات المحضّرة بعناية، في أجواء دافئة وتفاصيل أنيقة.</p>
+<div class="hero-buttons"><a class="btn" href="#menu">اكتشف القائمة</a><a class="btn btn-outline" href="#about">تعرف علينا</a></div>
+</div></div></section>
+<section class="section" id="menu"><div class="section-head"><span>OUR MENU</span><h2>قائمة مختارة بعناية</h2><p>أطباقنا المميزة، محضّرة بحب لتناسب ذوقك</p></div>
+<div class="categories" id="categories"></div><div class="menu-grid" id="menuGrid"></div></section>
+<section class="about" id="about"><div class="about-inner"><div><div class="eyebrow">OUR STORY</div><h2>الكرم يبدأ من التفاصيل</h2>
+<p>في دار الكرم نؤمن أن الطعام أكثر من مجرد وجبة؛ إنه لحظة تجمع وذكرى جميلة. لذلك نهتم باختيار المكونات، وطريقة التقديم، وكل تفصيلة تصنع تجربتك.</p><a class="btn btn-outline" href="#menu">جرّب أطباقنا</a></div>
+<div class="about-box"><strong>✦</strong><span>جودة في الاختيار، عناية في التحضير، وكرم في الاستقبال</span></div></div></section>
+<section class="section contact" id="contact"><div class="section-head"><span>CONTACT</span><h2>يسعدنا تواصلك</h2><p>للطلبات والاستفسارات يمكنك التواصل معنا مباشرة</p></div>
+<button class="btn" onclick="alert('أضف رقم واتساب المطعم قبل النشر.')">تواصل معنا</button></section>
+</main>
+<footer>© 2026 <b>دار الكرم</b> — جميع الحقوق محفوظة</footer>
+<div class="cart-panel"><button class="cart-fab" onclick="openCart()">سلة الطلبات <span class="cart-count" id="cartCount">0</span></button></div>
+<div class="modal-backdrop" id="cartModal" onclick="if(event.target===this)closeCart()"><div class="modal">
+<div class="modal-head"><h3>سلة طلباتك</h3><button class="close" onclick="closeCart()">×</button></div>
+<div id="cartItems"></div><div class="total"><span>الإجمالي</span><span id="cartTotal">0 ج.م</span></div>
+<div class="field"><label>اسم العميل</label><input id="customerName" placeholder="اكتب اسمك"></div>
+<div class="field"><label>رقم الهاتف</label><input id="customerPhone" inputmode="tel" placeholder="01xxxxxxxxx"></div>
+<div class="field"><label>العنوان / ملاحظات</label><textarea id="customerAddress" rows="2" placeholder="عنوان التوصيل أو أي ملاحظات"></textarea></div>
+<button class="btn full" onclick="placeOrder()">تأكيد الطلب التجريبي</button>
+</div></div>
+<script>
+const defaultProducts=[
+{id:1,name:'مشاوي مشكلة',category:'الأطباق الرئيسية',price:230,desc:'تشكيلة شهية من المشويات المتبلة بعناية.',image:'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80',tag:'الأكثر طلباً'},
+{id:2,name:'فتة شرقي',category:'الأطباق الرئيسية',price:145,desc:'طبقات من الأرز والخبز والصلصة بطعم أصيل.',image:'https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80',tag:'مميز'},
+{id:3,name:'طاجن لحم',category:'الأطباق الرئيسية',price:190,desc:'لحم طري مطهو ببطء مع خلطة المطعم الخاصة.',image:'https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=900&q=80',tag:''},
+{id:4,name:'مقبلات شرقية',category:'المقبلات',price:75,desc:'مجموعة مختارة من المقبلات الطازجة.',image:'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80',tag:''},
+{id:5,name:'عصير فريش',category:'المشروبات',price:45,desc:'عصير طبيعي منعش يُحضّر عند الطلب.',image:'https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=900&q=80',tag:''},
+{id:6,name:'حلو شرقي',category:'الحلويات',price:65,desc:'تحلية لذيذة بلمسة شرقية.',image:'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80',tag:''}
+];
+let products=JSON.parse(localStorage.getItem('darKaramProducts')||'null')||defaultProducts;
+let orders=JSON.parse(localStorage.getItem('darKaramOrders')||'[]'),cart=[],activeCategory='الكل';
+const saveOrders=()=>localStorage.setItem('darKaramOrders',JSON.stringify(orders));
+const money=n=>Number(n).toLocaleString('ar-EG')+' ج.م';
+function escapeHTML(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function renderCategories(){let cats=['الكل',...new Set(products.map(p=>p.category))];document.getElementById('categories').innerHTML=cats.map(c=>`<button class="category ${c===activeCategory?'active':''}" onclick="setCategory('${c}')">${c}</button>`).join('')}
+function setCategory(c){activeCategory=c;renderMenu()}
+function renderMenu(){renderCategories();let list=activeCategory==='الكل'?products:products.filter(p=>p.category===activeCategory);document.getElementById('menuGrid').innerHTML=list.length?list.map(p=>`<article class="food-card"><div class="food-image"><img src="${escapeHTML(p.image||'')}" alt="${escapeHTML(p.name)}" onerror="this.style.display='none'">${p.tag?`<span class="food-tag">${escapeHTML(p.tag)}</span>`:''}</div><div class="food-info"><h3>${escapeHTML(p.name)}</h3><p>${escapeHTML(p.desc||'طبق شهي من اختيارنا')}</p><div class="food-bottom"><span class="price">${money(p.price)}</span><button class="add" onclick="addToCart(${p.id})">+ أضف للسلة</button></div></div></article>`).join(''):'<p>لا توجد أصناف في هذا القسم حالياً.</p>'}
+function addToCart(id){let p=products.find(x=>x.id===id);if(!p)return;let item=cart.find(x=>x.id===id);item?item.qty++:cart.push({...p,qty:1});updateCart()}
+function updateCart(){document.getElementById('cartCount').textContent=cart.reduce((s,x)=>s+x.qty,0);document.getElementById('cartItems').innerHTML=cart.length?cart.map(x=>`<div class="cart-row"><span>${escapeHTML(x.name)} × ${x.qty}<br><small>${money(x.price*x.qty)}</small></span><button onclick="removeCart(${x.id})">×</button></div>`).join(''):'<p style="color:var(--muted);font-size:13px">السلة فارغة، اختر ما تحب من القائمة.</p>';document.getElementById('cartTotal').textContent=money(cart.reduce((s,x)=>s+x.price*x.qty,0))}
+function removeCart(id){cart=cart.filter(x=>x.id!==id);updateCart()}
+function openCart(){updateCart();document.getElementById('cartModal').classList.add('show')}
+function closeCart(){document.getElementById('cartModal').classList.remove('show')}
+function placeOrder(){if(!cart.length)return alert('أضف صنفاً واحداً على الأقل.');let name=document.getElementById('customerName').value.trim(),phone=document.getElementById('customerPhone').value.trim();if(!name||!phone)return alert('من فضلك اكتب الاسم ورقم الهاتف.');orders.unshift({id:Date.now(),name,phone,address:document.getElementById('customerAddress').value,items:cart.map(x=>({name:x.name,qty:x.qty,price:x.price})),total:cart.reduce((s,x)=>s+x.price*x.qty,0),status:'جديد',date:new Date().toLocaleString('ar-EG')});saveOrders();cart=[];updateCart();closeCart();['customerName','customerPhone','customerAddress'].forEach(id=>document.getElementById(id).value='');alert('تم تسجيل طلبك تجريبياً بنجاح.');}
+let savedName=localStorage.getItem('darKaramName');if(savedName)document.getElementById('restaurantName').textContent=savedName;
+renderMenu();updateCart();
+
+</script>
+</body></html>
